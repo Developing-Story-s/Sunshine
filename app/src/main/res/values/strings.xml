@@ -1,4 +1,25 @@
 <resources>
     <string name="app_name">Sunshine</string>
+    <string name="refresh">Refresh</string>
+
     <string name="action_settings">Settings</string>
+    <string name="search">Search</string>
+
+    <string name="title_activity_settings">Settings</string>
+
+    <string name="pref_location_label">City</string>
+    <string name="pref_location_key">location</string>
+    <string name="pref_location_default">Sydney</string>
+    <!--<string name="Units">Units</string>-->
+
+    <string-array name="Units">
+        <item>C</item>
+        <item>F</item>
+    </string-array>
+
+    <string-array name="UnitsValue">
+        <item>C</item>
+        <item>F</item>
+    </string-array>
+
 </resources>
