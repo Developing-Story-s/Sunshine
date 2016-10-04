@@ -23,16 +23,6 @@ public class DetailsActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
-//        TextView textView  = new TextView(this);
-//        Intent i = .getIntent();
-//        String message = i.getStringExtra("Weather");
-//        textView.setTextSize(40);
-//        Log.d(new DetailsActivity().TAG, "onCreateView: create()" + message);
-//        textView.setText(i.getStringExtra(Intent.EXTRA_TEXT));
-//        textView.setTextSize(40);
-//        Log.d(new DetailsActivity().TAG, "onCreateView: " + i.getStringExtra(Intent.EXTRA_TEXT));
-//        textView.setText(i.getStringExtra("Weather"));
-
         if(savedInstanceState == null)
             getFragmentManager().beginTransaction().replace(R.id.container, new PlaceHolderFragment()).commit();
 

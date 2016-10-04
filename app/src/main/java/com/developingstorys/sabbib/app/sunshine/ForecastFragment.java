@@ -160,7 +160,17 @@ public class ForecastFragment extends Fragment {
             return shortenedDateFormat.format(time);
         }
         private String formatHighLows(double high, double low) {
-            return high + "/" + low;
+
+            SharedPreferences unitsPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            String units = unitsPref.getString(
+                    getString(R.string.pref_units_key),
+                    getString(R.string.pref_value_default));
+            if(!units.equals(getString(R.string.pref_value_default))){
+                high = high * 1.8 + 32;
+                low  = low  * 1.8 + 32;
+            }
+
+            return Math.round(high) + "/" + Math.round(low);
         }
 
 
@@ -222,6 +232,8 @@ public class ForecastFragment extends Fragment {
                 JSONObject temperatureObject = dayForecast.getJSONObject(OWM_TEMPERATURE);
                 double high = temperatureObject.getDouble(OWM_MAX);
                 double low = temperatureObject.getDouble(OWM_MIN);
+                SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
 
                 highAndLow = formatHighLows(high, low);
                 resultStrs[i] = day + " - " + description + " - " + highAndLow;

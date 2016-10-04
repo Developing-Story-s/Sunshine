@@ -11,8 +11,9 @@
             />
 
         <ListPreference
-            android:title="Temperature"
-            android:defaultValue="C"
+            android:title="@string/pref_units_label"
+            android:key="@string/pref_units_key"
+            android:defaultValue="@string/pref_value_default"
             android:entries="@array/Units"
             android:entryValues="@array/UnitsValue"
             android:summary="Select Your Units"

@@ -10,6 +10,9 @@
     <string name="pref_location_label">City</string>
     <string name="pref_location_key">location</string>
     <string name="pref_location_default">Sydney</string>
+    <string name="pref_units_label">temperature</string>
+    <string name="pref_value_default">C</string>
+    <string name="pref_units_key">units</string>
     <!--<string name="Units">Units</string>-->
 
     <string-array name="Units">
