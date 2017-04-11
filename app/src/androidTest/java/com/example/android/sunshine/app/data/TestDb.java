@@ -15,7 +15,13 @@
  */
 package com.example.android.sunshine.app.data;
 
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.test.AndroidTestCase;
+
+import com.developingstorys.sabbib.app.data.WeatherContract;
+import com.developingstorys.sabbib.app.data.WeatherDbHelper;
 
 public class TestDb extends AndroidTestCase {
 
@@ -25,6 +31,11 @@ public class TestDb extends AndroidTestCase {
     void deleteTheDatabase() {
         mContext.deleteDatabase(WeatherDbHelper.DATABASE_NAME);
     }
+
+
+
+
+
 
     /*
         This function gets called before each test is executed to delete the database.  This makes
@@ -124,6 +135,8 @@ public class TestDb extends AndroidTestCase {
 
         // Finally, close the cursor and database
 
+
+
     }
 
     /*
@@ -141,22 +154,43 @@ public class TestDb extends AndroidTestCase {
         // tests. Why move it? We need the code to return the ID of the inserted location
         // and our testLocationTable can only return void because it's a test.
 
-        // First step: Get reference to writable database
+        // Second step: Get reference to writable database
+        WeatherDbHelper dbHelp = new WeatherDbHelper(mContext);
+        SQLiteDatabase db = dbHelp.getWritableDatabase();
 
         // Create ContentValues of what you want to insert
         // (you can use the createWeatherValues TestUtilities function if you wish)
+        ContentValues values = TestUtilities.createNorthPoleLocationValues();
 
         // Insert ContentValues into database and get a row ID back
+        long locationRowId = db.insert(WeatherContract.LocationEntry.TABLE_NAME, null, values);
+        assertTrue(locationRowId != -1);
 
         // Query the database and receive a Cursor back
+        Cursor cursor = db.query(
+                WeatherContract.LocationEntry.TABLE_NAME,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+
 
         // Move the cursor to a valid database row
+        assertTrue("Error: No Records returned from location query", cursor.moveToFirst());
 
         // Validate data in resulting Cursor with the original ContentValues
         // (you can use the validateCurrentRecord function in TestUtilities to validate the
         // query if you like)
+        TestUtilities.validateCurrentRecord("Error: Location Query Validation Failed", cursor, values);
+
+        assertFalse("Error: More then one record returned from location query", cursor.moveToNext());
 
         // Finally, close the cursor and database
+        cursor.close();
+        db.close();
     }
 
 
