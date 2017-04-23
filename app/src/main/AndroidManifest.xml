@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.developingstorys.sabbib.app.sunshine">
+    package="com.developingstorys.sabbib.app">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -20,7 +20,13 @@
         <activity android:name=".DetailsActivity" />
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings"></activity>
+            android:label="@string/title_activity_settings" />
+
+
+        <provider
+        android:authorities="com.developingstorys.sabbib.app"
+        android:name=".data.WeatherProvider"/>
+
     </application>
 
 </manifest>

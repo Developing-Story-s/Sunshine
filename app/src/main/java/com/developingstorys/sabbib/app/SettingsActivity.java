@@ -1,4 +1,4 @@
-package com.developingstorys.sabbib.app.sunshine;
+package com.developingstorys.sabbib.app;
 
 import android.os.Bundle;
 import android.preference.ListPreference;
@@ -7,6 +7,8 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+
+import com.developingstorys.sabbib.app.R;
 
 /**
  * Created by PC-Charlie on 10/1/2016.

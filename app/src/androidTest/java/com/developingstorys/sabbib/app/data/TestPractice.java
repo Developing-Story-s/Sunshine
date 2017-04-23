@@ -1,4 +1,4 @@
-package com.example.android.sunshine.app.data;
+package com.developingstorys.sabbib.app.data;
 
 import android.test.AndroidTestCase;
 

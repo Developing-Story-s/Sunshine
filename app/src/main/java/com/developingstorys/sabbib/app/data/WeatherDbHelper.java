@@ -19,6 +19,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.developingstorys.sabbib.app.data.WeatherContract.*;
 
 /**
  * Manages a local database for weather data.
@@ -84,6 +85,8 @@ public class WeatherDbHelper extends SQLiteOpenHelper {
                 LocationEntry.COLUMN_COORD_LAT + " REAL NOT NULL, " +
                 LocationEntry.COLUMN_COORD_LONG + " REAL NOT NULL " +
             ");";
+
+        sqLiteDatabase.execSQL(SQL_CREATE_LOCATION_TABLE);
     }
 
     @Override

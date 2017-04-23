@@ -1,4 +1,4 @@
-package com.developingstorys.sabbib.app.sunshine;
+package com.developingstorys.sabbib.app;
 
 import android.app.Fragment;
 import android.content.Intent;

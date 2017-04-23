@@ -5,7 +5,7 @@ android {
     buildToolsVersion "24.0.0"
 
     defaultConfig {
-        applicationId "com.buildingstories.sabbib.sunshine"
+        applicationId "com.developingstorys.sabbib.app"
         minSdkVersion 17
         targetSdkVersion 24
         versionCode 1
@@ -16,6 +16,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    buildTypes.each{
+        it.buildConfigField 'String', 'OPEN_WEATHER_MAP_API_KEY','"f8ae8f5c3c93a25e0b64a38a543de0ef"'
     }
 }
 

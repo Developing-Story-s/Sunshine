@@ -6,8 +6,22 @@
     <ListView
         android:id="@+id/listview_forecast"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingStart="0dp">
 
     </ListView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click"
+        android:textAllCaps="false"
+        android:layout_marginBottom="15dp"
+        android:textColor="#fff"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#ea428bFa"
+        />
 
 </RelativeLayout>

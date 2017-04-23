@@ -1,4 +1,4 @@
-package com.developingstorys.sabbib.app.sunshine;
+package com.developingstorys.sabbib.app;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
